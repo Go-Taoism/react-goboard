@@ -1,0 +1,14 @@
+
+.board-container {
+    --board-background-color: #EBB55B;
+    /* width: 200px;
+    height: 200px; */
+    position: relative;
+    background: url('../assets/board.png') var(--board-background-color);
+    border: 5px solid #CA933A;
+    padding: 5px;
+}
+
+.grid {
+    position: relative;
+}
