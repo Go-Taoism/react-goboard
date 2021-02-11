@@ -19,7 +19,7 @@ class Vertex extends React.Component {
           {
             sign && sign != 0 ? (
               <React.Fragment>
-                <div className={classNames('stone', {black: sign == 1}, {white: sign == -1})}></div>
+                <div className={classNames('stone', {white: sign == 1}, {black: sign == -1})}></div>
                 <div className="stone-shadow"></div>
               </React.Fragment>
             ): null

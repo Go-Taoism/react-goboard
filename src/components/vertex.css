@@ -4,6 +4,8 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    height: 100%;
+    width: 100%;
 }
 
 .stone  {
@@ -15,19 +17,23 @@
     z-index: 2;
 }
 
+.stone-shadow {
+    border-radius: 50%;
+    position: absolute;
+    top: .04em;
+    left: .04em;
+    width: calc(100% - .08em);
+    height: calc(100% - .08em); 
+    background: rgba(23, 10, 2, .4);
+    box-shadow: 0 0.1em 0.2em rgb(23 10 2 / 40%);
+}
+
 .black {
-    background: no-repeat url('../assets/stone_-1.png') center;
+    background: no-repeat url('../assets/stone_1.png') center;
     background-size: 100%;  
 }
 
 .white {
-    background: no-repeat url('../assets/stone_1.png') center;
+    background: no-repeat url('../assets/stone_-1.png') center;
     background-size: 100%;
-}
-
-.stone-shadow {
-    border-radius: 50%;
-    position: absolute;
-    background: rgba(23, 10, 2, .4);
-    box-shadow: 0 0.1em 0.2em rgb(23 10 2 / 40%);
 }

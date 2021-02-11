@@ -7,16 +7,19 @@ class Goboard extends Component{
     constructor(props){
       super(props);
       this.state = {
+        board: this.props.signMap
       }
     }
 
+    makeMove =  ([x,y], color) => {
+      let newBoard =  this.state.board.putChess([x,y], color)
+      this.setState({
+        board: newBoard
+      })
+    }
+
     render(){
-      const vertexSize = 24;
-      const width = 19; 
-      const height = 19;
-      const xs = new Array(19).fill(0).map((_, index) => index); 
-      const ys = new Array(19).fill(0).map((_, index) => index);
-      const hoshis = [];
+      const {vertexSize, width, height, xs, ys, hoshis, player} = this.props
       return (
           <div className='board-container'>
               <div className='grid'  style={{width: `${width * vertexSize }px`, height: `${ height * vertexSize}px`}}>
@@ -26,32 +29,30 @@ class Goboard extends Component{
                      xs = {xs}
                      ys = {ys}
                      hoshis = {hoshis}/>
+                     
               <div style={{display: 'grid', 
                           gridTemplateColumns: `repeat(${width}, auto)`, 
                           gridTemplateRows: `repeat(${height}, auto)`, 
                           zIndex: 1,
                           position: 'absolute',
+                          zIndex:99,
                           width: '100%',
                           height: '100%',}}>
-                  {
-                    xs.map((x, i) => {
+              {
+                xs.map((x, i) => {
+                  return (
+                    ys.map((y, i) => {
                       return (
-                        ys.map((y, i) => {
-                          let sign
-                          if (i === 12) {
-                            sign = 1
-                          } else if (i === 11) {
-                            sign = -1
-                          }
-                          return (
-                            <Vertex 
-                              sign = {sign}
-                            />  
-                          )
-                        })
+                        <div key = {`${x}.${y}`}  onClick = {() => this.makeMove([x, y], player)}>
+                        <Vertex
+                          sign={this.state.board.get([x,y])}
+                        />
+                        </div>
                       )
                     })
-                  }
+                  )
+                })
+              }
               </div>
               </div>
           </div>
