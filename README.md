@@ -1,7 +1,7 @@
 # react-goboard
 a react component that draws go board
 
-![Screenshot](./screenshot.png)
+![Screenshot](./screenshot.PNG)
 
 ## Build Demo
 
