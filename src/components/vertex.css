@@ -37,3 +37,21 @@
     background: no-repeat url('../assets/stone_-1.png') center;
     background-size: 100%;
 }
+
+.marker {
+    left: 50%;
+    top: 50%;
+    width: .5em;
+    height: .5em;
+    border-radius: 50%;
+    background: var(--shudan-board-foreground-color);
+    transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: 3;
+}
+.w {
+    background: white;
+}
+.b {
+    background: black;
+}

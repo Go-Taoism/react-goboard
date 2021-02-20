@@ -13,7 +13,7 @@ class Vertex extends React.Component {
     }
 
     render() {
-      const { sign } = this.props
+      const { sign, marker } = this.props
       return (
         <div className='stone-container'>
           {
@@ -21,6 +21,11 @@ class Vertex extends React.Component {
               <React.Fragment>
                 <div className={classNames('stone', {white: sign == 1}, {black: sign == -1})}></div>
                 <div className="stone-shadow"></div>
+                {
+                  marker? (
+                    <div className={classNames("marker", {w: marker == -1}, {b: marker == 1})}></div>
+                  ): null
+                }
               </React.Fragment>
             ): null
           }
