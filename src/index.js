@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import Goboard from './components/board';
-import goBoard from './service/godata';
-
+import { goBoard } from '@anarchy_zzh/goboard'
 const signMap = [
   [1, -1, 0, -1, -1, -1, 1, 0, 1, 1, -1, -1, 0, -1, 0, -1, -1, 1, 0],
   [0, 0, -1, 0, -1, 1, 1, 1, 0, 1, -1, 0, -1, -1, -1, -1, 1, 1, 0],
